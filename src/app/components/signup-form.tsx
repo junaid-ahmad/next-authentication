@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   EnvelopeIcon,
   EyeIcon,
@@ -12,11 +12,16 @@ import {
 import { Button, Checkbox, Input, Link } from "@nextui-org/react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { passwordStrength } from "check-password-strength";
+import { cn } from "clsx-tailwind-merge";
 
 import { FormSchema, FormType } from "@/lib/form-schema";
+import PasswordStrength from "./password-strength";
 
 const SignupForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const [passStrength, setPassStrength] = useState(0);
 
   const togglePasswordVisibility = () => setIsPasswordVisible((prev) => !prev);
 
@@ -25,7 +30,7 @@ const SignupForm = () => {
   const {
     register,
     handleSubmit,
-    reset,
+    watch,
     control,
     formState: { errors },
   } = useForm<FormType>({
@@ -45,11 +50,16 @@ const SignupForm = () => {
     console.log(data);
   };
 
+  useEffect(() => {
+    setPassStrength(passwordStrength(watch("password")).id);
+  }, [watch("password")]);
+
   return (
     <form
       onSubmit={handleSubmit(submitUser)}
       className="grid grid-cols-2 gap-3 p-2 place-self-stretch shadow border rounded-md"
     >
+      {passStrength}
       <Input
         {...register("firstName")}
         errorMessage={errors.firstName?.message}
@@ -96,6 +106,7 @@ const SignupForm = () => {
           />
         }
       />
+      <PasswordStrength passStrength={passStrength} />
       <Input
         {...register("confirmPassword")}
         errorMessage={errors.confirmPassword?.message}
