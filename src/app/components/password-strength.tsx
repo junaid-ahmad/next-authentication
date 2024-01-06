@@ -1,5 +1,4 @@
 import { cn } from "clsx-tailwind-merge";
-import React from "react";
 
 type Props = {
   passStrength: number;

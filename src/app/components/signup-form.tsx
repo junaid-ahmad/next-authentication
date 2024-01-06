@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Button, Checkbox, Input, Link } from "@nextui-org/react";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { passwordStrength } from "check-password-strength";
 import {
   EnvelopeIcon,
   EyeIcon,
@@ -9,14 +13,11 @@ import {
   PhoneIcon,
   UserIcon,
 } from "@heroicons/react/20/solid";
-import { Button, Checkbox, Input, Link } from "@nextui-org/react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { passwordStrength } from "check-password-strength";
-import { cn } from "clsx-tailwind-merge";
 
-import { FormSchema, FormType } from "@/lib/form-schema";
+import { FormSchema, FormType } from "@/lib/zod-schema/form-schema";
 import PasswordStrength from "./password-strength";
+import { registerUser } from "@/actions/auth-actions";
+import { toast } from "react-toastify";
 
 const SignupForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -47,19 +48,28 @@ const SignupForm = () => {
   });
 
   const submitUser: SubmitHandler<FormType> = async (data) => {
-    console.log(data);
+    const { confirmPassword, accepted, ...user } = data;
+
+    try {
+      const result = await registerUser(user);
+      toast.success("The user registered successfully!");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong!");
+    }
   };
 
+  const watchPassword = watch("password");
+
   useEffect(() => {
-    setPassStrength(passwordStrength(watch("password")).id);
-  }, [watch("password")]);
+    setPassStrength(passwordStrength(watchPassword).id);
+  }, [watchPassword]);
 
   return (
     <form
       onSubmit={handleSubmit(submitUser)}
       className="grid grid-cols-2 gap-3 p-2 place-self-stretch shadow border rounded-md"
     >
-      {passStrength}
       <Input
         {...register("firstName")}
         errorMessage={errors.firstName?.message}

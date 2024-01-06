@@ -1,8 +1,8 @@
 import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import * as bcrypt from "bcrypt";
 
-import prisma from "@/lib/prisma";
+import prisma from "@/lib/prisma/client";
+import { comparePassword } from "@/lib/bcrypt";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -34,7 +34,7 @@ export const authOptions: AuthOptions = {
           throw new Error("User name or password is not correct");
         }
 
-        const isPasswordCorrect = await bcrypt.compare(
+        const isPasswordCorrect = await comparePassword(
           credentials.password,
           user.password
         );
