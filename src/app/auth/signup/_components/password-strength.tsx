@@ -4,7 +4,7 @@ type Props = {
   passStrength: number;
 };
 
-const PasswordStrength = ({ passStrength }: Props) => {
+export const PasswordStrength = ({ passStrength }: Props) => {
   let strength: "Weaker" | "Weak" | "Strong" | "Stronger";
   switch (passStrength) {
     case 0:
@@ -45,5 +45,3 @@ const PasswordStrength = ({ passStrength }: Props) => {
     </div>
   );
 };
-
-export default PasswordStrength;

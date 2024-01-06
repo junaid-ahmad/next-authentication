@@ -1,7 +1,7 @@
 import { z } from "zod";
 import validator from "validator";
 
-export const FormSchema = z
+export const SignupFormSchema = z
   .object({
     firstName: z
       .string()
@@ -36,4 +36,13 @@ export const FormSchema = z
     path: ["confirmPassword"],
   });
 
-export type FormType = z.infer<typeof FormSchema>;
+export type SignupFormType = z.infer<typeof SignupFormSchema>;
+
+export const SigninFormSchema = z.object({
+  email: z.string().email("Please enter a valid email address"),
+  password: z.string({
+    required_error: "Please enter your password",
+  }),
+});
+
+export type SigninFormType = z.infer<typeof SigninFormSchema>;

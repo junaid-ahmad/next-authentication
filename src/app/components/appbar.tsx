@@ -1,18 +1,16 @@
-import {
-  Button,
-  Link,
-  Navbar,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
+import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import SigninButton from "./signin-button";
+import Link from "next/link";
 
 const Appbar = () => {
   return (
     <Navbar isBordered>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/">
+          <Link
+            className="px-4 py-2 rounded-md hover:bg-sky-500 transition-colors"
+            href="/"
+          >
             Home
           </Link>
         </NavbarItem>

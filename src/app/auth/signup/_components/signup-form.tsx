@@ -14,12 +14,12 @@ import {
   UserIcon,
 } from "@heroicons/react/20/solid";
 
-import { FormSchema, FormType } from "@/lib/zod-schema/form-schema";
-import PasswordStrength from "./password-strength";
+import { SignupFormSchema, SignupFormType } from "@/lib/zod-schema/auth";
+import { PasswordStrength } from "./password-strength";
 import { registerUser } from "@/actions/auth-actions";
 import { toast } from "react-toastify";
 
-const SignupForm = () => {
+export const SignupForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const [passStrength, setPassStrength] = useState(0);
@@ -34,7 +34,7 @@ const SignupForm = () => {
     watch,
     control,
     formState: { errors },
-  } = useForm<FormType>({
+  } = useForm<SignupFormType>({
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -44,14 +44,14 @@ const SignupForm = () => {
       confirmPassword: "",
       accepted: undefined,
     },
-    resolver: zodResolver(FormSchema),
+    resolver: zodResolver(SignupFormSchema),
   });
 
-  const submitUser: SubmitHandler<FormType> = async (data) => {
+  const submitUser: SubmitHandler<SignupFormType> = async (data) => {
     const { confirmPassword, accepted, ...user } = data;
 
     try {
-      const result = await registerUser(user);
+      await registerUser(user);
       toast.success("The user registered successfully!");
     } catch (error) {
       console.log(error);
@@ -150,5 +150,3 @@ const SignupForm = () => {
     </form>
   );
 };
-
-export default SignupForm;

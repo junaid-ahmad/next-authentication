@@ -1,15 +1,11 @@
 "use client";
 
 import { Button } from "@nextui-org/react";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 
-type Props = {};
-
-const SigninButton = (props: Props) => {
+const SigninButton = () => {
   const { data: session } = useSession();
-
-  console.log(session);
 
   return (
     <div className="flex items-center gap-2">
@@ -25,9 +21,7 @@ const SigninButton = (props: Props) => {
         </>
       ) : (
         <>
-          <Button as={Link} href="/api/auth/signin">
-            Sign In
-          </Button>
+          <Button onClick={() => signIn()}>Sign In</Button>
           <Button as={Link} href="/auth/signup">
             Sign Up
           </Button>
