@@ -14,7 +14,7 @@ import {
   UserIcon,
 } from "@heroicons/react/20/solid";
 
-import { SignupFormSchema, SignupFormType } from "@/lib/zod-schema/auth";
+import { SignupFormSchema, SignupFormType } from "@/lib/zod/auth-schema";
 import { PasswordStrength } from "./password-strength";
 import { registerUser } from "@/actions/auth-actions";
 import { toast } from "react-toastify";

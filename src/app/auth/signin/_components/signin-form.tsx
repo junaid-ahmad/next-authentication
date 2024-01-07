@@ -1,6 +1,6 @@
 "use client";
 
-import { SigninFormSchema, SigninFormType } from "@/lib/zod-schema/auth";
+import { SigninFormSchema, SigninFormType } from "@/lib/zod/auth-schema";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Link } from "@nextui-org/react";
