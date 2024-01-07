@@ -44,6 +44,10 @@ export const authOptions: AuthOptions = {
           throw new Error("User name or password is incorrect");
         }
 
+        if (!user.emailVerified) {
+          throw new Error("Please verify your email first!");
+        }
+
         const { password, ...userWithoutPassword } = user;
 
         return userWithoutPassword;

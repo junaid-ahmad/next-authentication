@@ -1,4 +1,6 @@
+import Handlebars from "handlebars";
 import { createTransport } from "nodemailer";
+import { activationTemplate } from "../email-templates/activation";
 
 type EmailType = {
   to: string;
@@ -41,9 +43,18 @@ export async function sendMail({ to, subject, body }: EmailType) {
       subject,
       html: body,
     });
-
-    console.log(sendResult);
   } catch (error) {
     console.log(error);
   }
+}
+
+export function compileActivationTemplate(name: string, url: string) {
+  const template = Handlebars.compile(activationTemplate);
+
+  const htmlBody = template({
+    name,
+    url,
+  });
+
+  return htmlBody;
 }
