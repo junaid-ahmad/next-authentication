@@ -1,3 +1,13 @@
+# SERVICES USED
+
+MailTrap (SMTP Server)
+
+Handlebars (Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other template engines.)
+(https://handlebarsjs.com/)
+
+Beefree: Free Drag & Drop HTML Email Template Builder
+(https://beefree.io/)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

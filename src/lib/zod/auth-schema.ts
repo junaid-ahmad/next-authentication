@@ -46,3 +46,29 @@ export const SigninFormSchema = z.object({
 });
 
 export type SigninFormType = z.infer<typeof SigninFormSchema>;
+
+export const EmailSchema = SigninFormSchema.pick({ email: true });
+
+// export const EmailSchema = z.object({
+//   email: z.string().email("Please enter a valid email address"),
+// });
+
+export type EmailType = z.infer<typeof EmailSchema>;
+
+export const ResetPasswordSchema = z
+  .object({
+    password: z
+      .string()
+      .min(6, "Password must be atleast 6 characters")
+      .max(20, "Password must be less than 20 characters"),
+    confirmPassword: z
+      .string()
+      .min(6, "Password must be atleast 6 characters")
+      .max(20, "Password must be less than 20 characters"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Password and confirm password doesnt match",
+    path: ["confirmPassword"],
+  });
+
+export type ResetPasswordType = z.infer<typeof ResetPasswordSchema>;
