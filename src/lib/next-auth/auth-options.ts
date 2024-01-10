@@ -68,4 +68,7 @@ export const authOptions: AuthOptions = {
       return session;
     },
   },
+  session: {
+    strategy: "jwt",
+  },
 };
