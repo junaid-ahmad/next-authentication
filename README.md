@@ -1,16 +1,8 @@
-# SERVICES USED
+# Authentication in Next.js 14
 
-MailTrap (SMTP Server)
+Explore the future of web development with my personal project built on the cutting-edge features of Next.js! Leveraging the power of server-components and server-actions, my portfolio takes advantage of the latest advancements in Next.js to create a dynamic and seamless user experience.
 
-Handlebars (Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other template engines.)
-(https://handlebarsjs.com/)
-
-Beefree: Free Drag & Drop HTML Email Template Builder
-(https://beefree.io/)
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
+## Getting Started:(#getting-started)
 
 First, run the development server:
 
@@ -26,21 +18,46 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## KEY FEATURES:(#key-features)
 
-## Learn More
+- **App Router**: Experience smooth and client-side navigations with the [app-router](https://nextjs.org/docs/app), providing a delightful and responsive user journey.
 
-To learn more about Next.js, take a look at the following resources:
+- **Server Components**: Embrace the modular, [server-rendered components](https://nextjs.org/docs/app/building-your-application/rendering/server-components) for enhanced performance and maintainability.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Server Actions and Mutations**: [Server Actions]() are asynchronous functions that are executed on the server. They can be used in Server and Client Components to handle form submissions and data mutations in Next.js applications.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Next-auth for Authentication**: Secure your application with ease using [Next-auth](https://next-auth.js.org/), a versatile authentication library seamlessly integrated into the project.
 
-## Deploy on Vercel
+This project serves as both a showcase of my skills and a playground for exploring the latest Next.js features. Dive into the code, explore the components, and witness the future of web development unfold.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## TECHNOLOGY STACK:(#technology-stack)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **React(https://react.dev/):** The library for web and native user interfaces
+
+- **Next.js(https://nextjs.org/):** Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.
+
+- **NextAuth.js(https://next-auth.js.org/):** NextAuth.js is a complete open-source authentication solution for Next.js applications.
+
+- **TypeScript(https://www.typescriptlang.org/):** TypeScript extends JavaScript and enhances the developer experience. It helps software developers add type safety to their projects and provides features like type aliases, interfaces, abstract classes, encapsulation, inheritance, and function overloading.
+
+- **Prisma(https://prisma.io/):** Prisma is an ORM focused on making it easy for Node. js and TypeScript applications to work with databases.
+
+- **React Hook Form(https://react-hook-form.com/):** React Hook Form makes form validation easy by aligning with the existing HTML standard for form validation.
+
+- **Zod(https://zod.dev/):** TypeScript-first schema validation with static type inference.
+
+- **Nodemailer(https://nodemailer.com/):** Nodemailer is a module for Node.js applications to allow easy as cake email sending.
+
+- **NextUI(https://nextui.org/):** A beautiful, fast and modern React UI library.
+
+- **Heroicons(https://heroicons.com/):** Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.
+
+## OTHER SERVICES USED(#other-services)
+
+- **Handlebars(https://handlebarsjs.com/):** Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other template engines.
+
+- **MailTrap (SMTP Server):** Email Delivery Platform for individuals and businesses to test, send and control email infrastructure in one place.
+
+- **Beefree(https://beefree.io/):** Free Drag & Drop HTML Email Template Builder.

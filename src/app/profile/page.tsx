@@ -2,7 +2,6 @@ import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/lib/next-auth/auth-options";
 import { Image } from "@nextui-org/react";
-import { redirect } from "next/navigation";
 
 const ProfilePage = async () => {
   const session = await getServerSession(authOptions);
