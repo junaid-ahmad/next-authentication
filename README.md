@@ -32,9 +32,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This project serves as both a showcase of my skills and a playground for exploring the latest Next.js features. Dive into the code, explore the components, and witness the future of web development unfold.
 
-## TECHNOLOGY STACK:(#technology-stack)
+## [TECHNOLOGY STACK:](#technology-stack)
 
-- **React(https://react.dev/):** The library for web and native user interfaces
+- **React:**(https://react.dev/) The library for web and native user interfaces
 
 - **Next.js(https://nextjs.org/):** Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.
 
