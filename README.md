@@ -54,7 +54,7 @@ This project serves as both a showcase of my skills and a playground for explori
 
 - **[Heroicons](https://heroicons.com/):** Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.
 
-## OTHER SERVICES USED
+## OTHER SERVICES
 
 - **[Handlebars](https://handlebarsjs.com/):** Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other template engines.
 
