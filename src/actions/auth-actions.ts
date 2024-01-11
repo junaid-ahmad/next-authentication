@@ -9,12 +9,6 @@ import { compileTemplate } from "@/lib/handlebars";
 import { activationTemplate } from "@/lib/email-templates/activation";
 import { resetPasswordTemplate } from "@/lib/email-templates/reset-pasword";
 
-export const getAllUsers = async () => {
-  const users = await prisma.user.findMany();
-
-  return users;
-};
-
 type RegisterUserFunc = (
   user: Omit<User, "id" | "emailVerified" | "image">
 ) => Promise<User>;
